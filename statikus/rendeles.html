@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="bootstrap-4.5.0-dist\css\bootstrap.min.css">
     <title>Üvegtigris Rendelés</title>
 </head>
-<body background="üvegtigris1.jpg"></div>
+<body background="üvegtigris1.jpg">
   <h1><br></h1>
   <div class="row">
     <div class="col-1"></div>
@@ -20,11 +20,48 @@
         <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="regisztáció.html" role="tab" aria-controls="v-pills-settings" aria-selected="false">Regisztráció</a>
       </div>
     </div>
-    <div class="col-8">
+   <div class="col-8">
       <div class="tab-content" id="rendeles-tabContent">
         <div class="tab-pane fade show active" id="rendeles" role="tabpanel" aria-labelledby="rendeles-tab">
             <br>
-            Rendelés panel feltöltés alatt
+            <h3>Online Rendelés</h3>
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+              <strong>Szervusz"!</strong>
+              <p>Ha elég bátor vagy, akár online is megrendelheted azt, amire vágysz.</p> 
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+            <form id="oForm" action="">
+              <div class="form-group">      
+               <label for="">Mit ennél?</label>
+               <select id="topInput1" name="top-input1" class="form-control">
+               </select>
+              </div>
+              <div class="form-group">      
+                <label for="">Mit innál?</label>
+                <select id="topInput2" name="top-input2" class="form-control">
+                </select>
+               </div>
+               <div class="form-group">      
+                <label for="">Ki szállítsa ki?</label>
+                <select id="topInput3" name="top-input3" class="form-control">
+                </select>
+               </div>
+              <div class="form-group">
+                <label for="">Mennyiség</label>
+                <input type="number" name="amount-input" class="form-control" value="1">
+                <small class="form-text text-muted">
+                  Minimum 1, Maximum 10 db
+                </small>
+              </div>   
+              <div class="form-group">
+                Fizetendő: <strong class="show-amount">0</strong> Ft
+              </div> 
+              <button onclick="calcAmount()" type="submit" class="btn btn-primary">Megrendelés</button>
+            </form>                                        
+          </div>
             <br>
         </div>
       </div>
@@ -32,5 +69,6 @@
   </div>
   <div class="col-1"></div>
 </div> 
+<script src="JS\rendeles.js"></script>
 </body>
 </html>

@@ -1,62 +1,37 @@
+// kalkuláció
 function calcAmount() {
     let price = 1000;
     let amountInput = document.querySelector("input[name=amount-input]");
     let amountNumber = parseInt(amountInput.value);
     amountNumber = isNaN(amountNumber) ? 0 : amountNumber;
-
     showSumPrice(price, amountNumber);
     }
 
+// felugró ablak    
 function showSumPrice(price, amountNumber) {
     let showAmount = document.querySelector("strong.show-amount");
     if ( amountNumber > 10 ) {
-        alert("Max 10 Hambi vásárolható");
+        alert("Ennyit nem bírsz megenni (max 10)");
     } else if ( amountNumber < 1 ) {
-        alert("Min 1 Hambit kell venned");
+        alert("Ne szórakozz velem");
     } else {    
         let amount = amountNumber * price;      
         showAmount.innerHTML = amount;
     }
 }
 
-// Add helpTex.
-let helpText = document.createElement("small");
-helpText.className = "form-text text-muted";
-helpText.innerHTML = "Mit szeretnél?";
-
-// Kiválasztás
-let parent = document.querySelector("div.form-group:nth-child(1)");
-// Hozzáadás (aktív)
-parent.appendChild(helpText);
-// Eltávolítás: parent.removeChild(helpText);
-
-// Esemény
-let sendButton = document.querySelector("form .btn.btn-primary");
-/* b varia
-sendButton.onclick = function() {
-    alert("Hi JS");
-}
-kövi a c varia, az aktív 
-sendButton.addEventListener("click", function(){
-    alert("Hi JS");
-} )
-*/
-
-
 // Űrlap események
 let oForm = document.querySelector("#oForm");
 oForm.addEventListener("submit", function(ev) {
     ev.preventDefault();  
-
     let inputs = this.querySelectorAll("input");
     let values = {};
     for (let i = 0; i < inputs.length; i++) {
         values[inputs[i].name] = inputs[i].value; 
     }
-    console.log( values )  
 });
 
-// Parent element kezelése
+// Parent element kezelése (felső szines abklak)
 let alertCloseButtons = document.querySelectorAll(".close[data-dismiss='alert']");
 let alertCloseEventHandlerFunction = function (ev) {
     this.parentElement.style.display = "none";
@@ -66,18 +41,46 @@ for (let i = 0; i < alertCloseButtons.length; i++) {
 }
 
 // Select elemek.
-let toppings = [ 
-    "Zab", 
-    "Korpa", 
-    "Szója", 
-    "Tejföl"
+let toppings1 = [ 
+    "Gombás (nem konzervízű) Hamburget", 
+    "HotDogot kevés mustárral", 
+    "HotDogot sok ketchuppal"
 ];
-let toppingSelect = document.querySelector("#topInput");
-let index = 0;
-while(index < toppings.length) {
+let toppingSelect1 = document.querySelector("#topInput1");
+let index1 = 0;
+while(index1 < toppings1.length) {
   let option = document.createElement("option");
-  option.value = index;
-  option.innerHTML = toppings[index];
-  toppingSelect.appendChild(option);
-  index++;
+  option.value = index1;
+  option.innerHTML = toppings1[index1];
+  toppingSelect1.appendChild(option);
+  index1++;
+}
+
+let toppings2 = [ 
+    "10 Bubis vizet", 
+    "5 Bubis vizet", 
+    "1 Bubis vizet"
+];
+let toppingSelect2 = document.querySelector("#topInput2");
+let index2 = 0;
+while(index2 < toppings2.length) {
+  let option = document.createElement("option");
+  option.value = index1;
+  option.innerHTML = toppings2[index2];
+  toppingSelect2.appendChild(option);
+  index2++;
+}
+let toppings3 = [ 
+    "Lali az Impalával", 
+    "Csoki a Babettával", 
+    "Sanyika gyalog"
+];
+let toppingSelect3 = document.querySelector("#topInput3");
+let index3 = 0;
+while(index3 < toppings3.length) {
+  let option = document.createElement("option");
+  option.value = index1;
+  option.innerHTML = toppings3[index3];
+  toppingSelect3.appendChild(option);
+  index3++;
 }
