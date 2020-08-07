@@ -18,13 +18,18 @@
         <a class="nav-link active" id="rendeles" data-toggle="pill" href="rendeles.html" role="tab" aria-controls="rendeles" aria-selected="true">Rendelés</a>
         <a class="nav-link" id="galeria" data-toggle="pill" href="galeria.html" role="tab" aria-controls="galeria" aria-selected="false">Galéria</a>
         <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="regisztáció.html" role="tab" aria-controls="v-pills-settings" aria-selected="false">Regisztráció</a>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            Ha sok időm lesz az időjáráswidget ide kerül majd 
+             </div>
+        </div>
       </div>
     </div>
    <div class="col-8">
       <div class="tab-content" id="rendeles-tabContent">
         <div class="tab-pane fade show active" id="rendeles" role="tabpanel" aria-labelledby="rendeles-tab">
             <br>
-            <h3>Online Rendelés</h3>
+            <h3>Online Rendelés - MÉG NINCS KÉSZEN</h3>
             <div class="alert alert-info alert-dismissible fade show" role="alert">
               <strong>Szervusz"!</strong>
               <p>Ha elég bátor vagy, akár online is megrendelheted azt, amire vágysz.</p> 
@@ -56,15 +61,10 @@
                   Minimum 1, Maximum 10 db
                 </small>
               </div>   
-            </div>   
-            <div class="form-group">
-              Kaja ára: <strong id="topInput20" class="show-amount">0</strong> Ft
-              <br>
-              Szállítási költség: <strong id="topInput30" class="showamount31">0</strong> Ft
-              
-            </div> 
-            <button onclick="calcAmountAlap()" type="submit" class="btn btn-primary">Kalkuláció</button>
-            <a class="btn btn-primary" href="rendeles2.html" role="button">Továbblépés</a>
+              <div class="form-group">
+                Fizetendő: <strong class="show-amount">0</strong> Ft
+              </div> 
+              <button onclick="calcAmount()" type="submit" class="btn btn-primary">Megrendelés</button>
             </form>                                        
           </div>
             <br>
